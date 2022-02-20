@@ -1,0 +1,1 @@
+(graphite/package 'magit)

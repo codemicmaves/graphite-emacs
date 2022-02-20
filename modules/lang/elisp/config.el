@@ -6,3 +6,6 @@
 		(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 		(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 		(add-hook 'scheme-mode-hook           #'enable-paredit-mode))
+
+(graphite/after 'macrostep
+		(define-key emacs-lisp-mode-map (kbd "C-c e") 'macrostep-expand))

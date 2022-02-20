@@ -14,7 +14,8 @@
 (defcustom graphite/modules '((emacs   (defaults))
 			      (package (straight))
 			      (ui      (defaults fonts colors vertico corfu))
-			      (lang    (elisp)))
+			      (lang    (elisp))
+			      (tools   (magit)))
   "Graphite modules list."
   :group 'graphite)
 
