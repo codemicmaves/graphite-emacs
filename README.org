@@ -22,4 +22,4 @@ Add the following line to =~/.emacs.d/init.el=
 
 * Screenshot
 
-[[https://github.com/codemicmaves/graphite-emacs/blob/screenshots/screenshots/graphite-emacs-01.png?raw=true][Graphite Emacs]]
+[[https://github.com/codemicmaves/graphite-emacs/blob/screenshots/screenshots/graphite-emacs-01.png?raw=true]]
