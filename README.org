@@ -19,3 +19,7 @@ Add the following line to =~/.emacs.d/init.el=
 #+begin_src emacs-lisp
   (load-path "~/graphite/init.el")
 #+end_src
+
+* Screenshot
+
+[[https://github.com/codemicmaves/graphite-emacs/blob/screenshots/screenshots/graphite-emacs-01.png?raw=true][Graphite Emacs]]
