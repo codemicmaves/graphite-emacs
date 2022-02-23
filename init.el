@@ -1,4 +1,18 @@
 ;; --------------------------
+;; Graphite: Load user config
+;; --------------------------
+
+(defun graphite/load (file)
+  "Load `file' if it exists. Otherwise do nothing."
+  (if (file-exists-p file)
+      (load file)))
+
+(graphite/load (expand-file-name
+		"config.el"
+		(file-name-directory (buffer-file-name))))
+
+
+;; --------------------------
 ;; Graphite: Custom variables
 ;; --------------------------
 (defcustom graphite/init-file
@@ -15,7 +29,7 @@
 			      (package (straight))
 			      (ui      (defaults fonts colors vertico corfu))
 			      (lang    (elisp))
-			      (tools   (magit)))
+			      (tools   (magit navigation)))
   "Graphite modules list."
   :group 'graphite)
 
@@ -27,12 +41,10 @@
 (defun graphite/reload-emacs-config ()
   "Reload emacs configuration"
   (interactive)
-  (load-file graphite/init-file))
+  (load-file graphite/init-file)
+  (message "Configuration re-loaded."))
 
-(defun graphite/load (file)
-  "Load `file' if it exists. Otherwise do nothing."
-  (if (file-exists-p file)
-      (load file)))
+
 
 (defun graphite/package (package)
   "Install `package' using straight."
@@ -60,14 +72,16 @@
   "Install packages into `graphite/packages--list' from `graphite/modules-dir'."
   (graphite/load-modules--with-filename "packages"))
 
-(defun graphite/update-packages ()
-  "Install or update packages in `graphite/packages--list'."
-  (interactive)
-  (cl-loop for package in graphite/packages--list do (straight-use-package package)))
-
 (defun graphite/activate-packages ()
   "Register packages in `graphite/packages--list'."
   (cl-loop for package in graphite/packages--list do (straight-use-package-lazy package)))
+
+(defun graphite/update-packages ()
+  "Install or update packages in `graphite/packages--list'."
+  (interactive)
+  (graphite/load-modules--packages)
+  (cl-loop for package in graphite/packages--list do (straight-use-package package))
+  (message "Packages updated."))
 
 (defun graphite/initialize ()
   "Initial setup for graphite emacs config."
