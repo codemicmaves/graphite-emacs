@@ -23,3 +23,6 @@
 
 (graphite/after 'emr
 		(define-key prog-mode-map (kbd "M-RET") 'emr-show-refactor-menu))
+
+(graphite/after 'expand-region
+		(global-set-key (kbd "C-=") 'er/expand-region))

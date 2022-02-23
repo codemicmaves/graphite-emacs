@@ -8,3 +8,4 @@
 (graphite/package 'suggest)
 (graphite/package 'sotlisp)
 (graphite/package 'emr)
+(graphite/package 'expand-region)
