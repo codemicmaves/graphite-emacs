@@ -1,1 +1,3 @@
-(graphite/after 'corfu (corfu-global-mode))
+(graphite/after 'corfu
+		(setq corfu-auto t)
+		(corfu-global-mode))

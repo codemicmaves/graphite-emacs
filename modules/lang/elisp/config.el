@@ -9,3 +9,17 @@
 
 (graphite/after 'macrostep
 		(define-key emacs-lisp-mode-map (kbd "C-c e") 'macrostep-expand))
+
+(graphite/after 'helpful
+		(global-set-key (kbd "C-h f") #'helpful-callable)
+		(global-set-key (kbd "C-h v") #'helpful-variable)
+		(global-set-key (kbd "C-h k") #'helpful-key))
+
+(graphite/after 'elisp-demos
+		(advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update))
+
+(graphite/after 'sotlisp
+		(add-hook 'emacs-lisp-mode-hook #'speed-of-thought-mode))
+
+(graphite/after 'emr
+		(define-key prog-mode-map (kbd "M-RET") 'emr-show-refactor-menu))

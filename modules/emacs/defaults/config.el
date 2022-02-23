@@ -6,3 +6,5 @@
 (setq kept-new-versions 6)
 (setq kept-old-versions 2)
 (setq version-control t)
+
+(global-set-key (kbd "C-c o") 'occur)
