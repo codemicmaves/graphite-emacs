@@ -9,7 +9,7 @@
 
 (graphite/load (expand-file-name
 		"config.el"
-		(file-name-directory (buffer-file-name))))
+		(file-name-directory load-file-name)))
 
 
 ;; --------------------------
