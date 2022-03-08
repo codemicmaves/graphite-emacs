@@ -2,6 +2,8 @@
 #+author: Mic Maves
 #+language: en
 
+#+html: <img src="https://github.com/codemicmaves/graphite-emacs/blob/screenshots/images/logo.png?raw=true" align="right" width="30%">
+
 Graphite is a simple starter configuration for Emacs. It implements a basic and much simpler version of the modules system in [[https://github.com/hlissner/doom-emacs][Doom Emacs]]. In graphite, the package installation is decoupled from package configuration. Packages are only installed or updated when the user explicitly asks emacs to do it rather than have it installed or updated on startup.
 
 * Installation
