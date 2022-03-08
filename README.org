@@ -17,7 +17,8 @@ Clone this repository.
 Add the following line to =~/.emacs.d/init.el=
 
 #+begin_src emacs-lisp
-  (load-path "~/.graphite.d/init.el")
+(setq graphite/init-file "~/.graphite.d/init.el")
+(load graphite/init-file)
 #+end_src
 
 * Configuration
