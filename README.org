@@ -23,13 +23,17 @@ Add the following line to =~/.emacs.d/init.el=
 
 * Configuration
 
-By default graphite looks for user configuration in the =~/graphite= directory. To change this to a directory of your liking, add the following to =~/.emacs.d/init.el=.
+Graphite separates the user configuration to a different directory so that one can make changes to the configuration and maintain these changes in their own private repository without having to fork graphite-emacs. This also makes it easier to pull in new features or bug-fixes for graphite without disturbing the custom configuration.
+
+By default graphite looks for user configuration in the =~/graphite= directory. To change this to a directory of your liking, set the =graphite/user-config-file= variable in =~/.emacs.d/init.el= before loading the graphite init file.
 
 #+begin_src emacs-lisp
+(setq graphite/init-file "~/.graphite.d/init.el")
 (setq graphite/user-config-file "~/graphite/config.el")
+(load graphite/init-file)
 #+end_src
 
-Graphite gives its users a way to organize the installation and configuration of features. Graphite is organized as /modules/ and /features/. Each /feature/ could use multiple packages listed to be installed in =packages.el= file. Each feature and its packages can be configured in the =config.el= contained in the /feature/ directory. Multiple /feature/ directories are organized in a /module/ directory. The module directories are placed in the =~/graphite/modules= directory. In short, the directory structure of the user configuration must look like the following:
+Graphite lets you organize the installation and configuration of features. Graphite is organized as /modules/ and /features/. Each /feature/ could use multiple packages listed to be installed in =packages.el= file. Each feature and its packages can be configured in the =config.el= contained in the /feature/ directory. Multiple /feature/ directories are organized in a /module/ directory. The module directories are placed in the =~/graphite/modules= directory. In short, the directory structure of the user configuration must look like the following:
 
 #+begin_example
 graphite
