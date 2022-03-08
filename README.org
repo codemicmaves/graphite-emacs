@@ -2,8 +2,6 @@
 #+author: Mic Maves
 #+language: en
 
-* Introduction
-
 Graphite is a simple starter configuration for Emacs. It implements a basic and much simpler version of the modules system in [[https://github.com/hlissner/doom-emacs][Doom Emacs]]. In graphite, the package installation is decoupled from package configuration. Packages are only installed or updated when the user explicitly asks emacs to do it rather than have it installed or updated on startup.
 
 * Installation
@@ -47,6 +45,13 @@ graphite
 =graphite/config.el= - This file can be used to configure the =graphite/user-modules= variable.
 =graphite/modules/modules_x/packages.el=  - Use the =(graphite/package 'package)= function to add a package for installation.
 =graphite/modules/modules_x/config.el=    - Use the =(graphite/after ...)= macro to configure a package after it is installed and is present.
+
+To include the installation and configuration of your custom features, set the =graphite/user-modules= variable in =graphite/user-config-file=. Here is an example:
+
+#+begin_src emacs-lisp
+  (setq graphite/user-modules '((module_1 . (feature_1 feature_2 feature_2))
+                                (module_2 . (feature_1 feature_2 feature_2))))
+#+end_src
 
 * Usage
 

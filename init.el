@@ -25,11 +25,11 @@
   "Graphite modules directory path."
   :group 'graphite)
 
-(defcustom graphite/modules '((emacs   (defaults))
-			      (package (straight))
-			      (ui      (defaults fonts colors vertico corfu))
-			      (lang    (elisp))
-			      (tools   (magit navigation)))
+(defcustom graphite/modules '((emacs   . (defaults))
+			      (package . (straight))
+			      (ui      . (defaults fonts colors vertico corfu))
+			      (lang    . (elisp))
+			      (tools   . (magit navigation)))
   "Graphite modules list."
   :group 'graphite)
 
@@ -73,7 +73,7 @@
   "Helper method to load specified `filename'.el from `modulesdir' directory."
   (mapc (lambda (categories)
 	  (let ( (category (car categories))
-		 (units    (car (cdr categories))) )
+		 (units    (cdr categories)) )
 	    (mapc (lambda (unit)
 		    (graphite/load (format "%s/%s/%s/%s.el"
 					   modulesdir
