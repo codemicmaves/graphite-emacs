@@ -48,6 +48,20 @@ graphite
 =graphite/modules/modules_x/packages.el=  - Use the =(graphite/package 'package)= function to add a package for installation.
 =graphite/modules/modules_x/config.el=    - Use the =(graphite/after ...)= macro to configure a package after it is installed and is present.
 
+* Usage
+
+Graphite decouples package installation from package configuration. It doesn't install packages automatically on startup. Install packages using the following command:
+
+#+begin_src emacs-lisp
+M-x graphite/update-packages
+#+end_src
+
+Reload the packages using the following command (bound to =<F8>= by default):
+
+#+begin_src emacs-lisp
+M-x graphite/reload-emacs-config
+#+end_src
+
 * Screenshot
 
 [[https://github.com/codemicmaves/graphite-emacs/blob/screenshots/screenshots/graphite-emacs-01.png?raw=t]]
