@@ -5,7 +5,7 @@
   "Default font for graphite."
   :group 'graphite)
 
-(defcustom graphite/variable-pitch-font "Jura"
+(defcustom graphite/variable-pitch-font "Kreon"
   "Variable pitch font for graphite."
   :group 'graphite)
 
@@ -16,6 +16,6 @@
 		    :height 130)
 (set-face-attribute 'variable-pitch nil
 		    :family graphite/variable-pitch-font
-		    :weight 'normal
+		    :weight 'light
 		    :height 140)
                                                                                         

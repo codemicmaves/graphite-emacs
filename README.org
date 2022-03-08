@@ -6,20 +6,48 @@
 
 Graphite is a simple starter configuration for Emacs. It implements a basic and much simpler version of the modules system in [[https://github.com/hlissner/doom-emacs][Doom Emacs]]. In graphite, the package installation is decoupled from package configuration. Packages are only installed or updated when the user explicitly asks emacs to do it rather than have it installed or updated on startup.
 
-* Install
+* Installation
 
 Clone this repository.
 
 #+begin_src sh
-  git clone --depth 1 https://github.com/codemicmaves/graphite-emacs ~/graphite
+  git clone --depth 1 https://github.com/codemicmaves/graphite-emacs ~/.graphite.d
 #+end_src
 
 Add the following line to =~/.emacs.d/init.el=
 
 #+begin_src emacs-lisp
-  (load-path "~/graphite/init.el")
+  (load-path "~/.graphite.d/init.el")
 #+end_src
+
+* Configuration
+
+By default graphite looks for user configuration in the =~/graphite= directory. To change this to a directory of your liking, add the following to =~/.emacs.d/init.el=.
+
+#+begin_src emacs-lisp
+(setq graphite/user-config-file "~/graphite/config.el")
+#+end_src
+
+Graphite gives its users a way to organize the installation and configuration of features. Graphite is organized as /modules/ and /features/. Each /feature/ could use multiple packages listed to be installed in =packages.el= file. Each feature and its packages can be configured in the =config.el= contained in the /feature/ directory. Multiple /feature/ directories are organized in a /module/ directory. The module directories are placed in the =~/graphite/modules= directory. In short, the directory structure of the user configuration must look like the following:
+
+#+begin_example
+graphite
+├── config.el
+└── modules
+    └── module_1
+        ├── feature_1
+        │   └── config.el
+        ├── feature_2
+        │   └── config.el
+        └── feature_3
+            ├── config.el
+            └── packages.el
+#+end_example
+
+=graphite/config.el= - This file can be used to configure the =graphite/user-modules= variable.
+=graphite/modules/modules_x/packages.el=  - Use the =(graphite/package 'package)= function to add a package for installation.
+=graphite/modules/modules_x/config.el=    - Use the =(graphite/after ...)= macro to configure a package after it is installed and is present.
 
 * Screenshot
 
-[[https://github.com/codemicmaves/graphite-emacs/blob/screenshots/screenshots/graphite-emacs-01.png?raw=true]]
+[[https://github.com/codemicmaves/graphite-emacs/blob/screenshots/screenshots/graphite-emacs-01.png?raw=t]]
