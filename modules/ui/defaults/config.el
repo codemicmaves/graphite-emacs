@@ -11,3 +11,8 @@
 (set-window-buffer nil (current-buffer))
 
 (setq linum-format " %4d ")
+
+(setq tab-bar-close-button-show nil)
+(setq tab-bar-new-button-show nil)
+(setq tab-bar-separator "  ")
+(setq x-underline-at-descent-line t)
