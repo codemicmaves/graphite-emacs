@@ -95,13 +95,13 @@
 
 (defun graphite/activate-packages ()
   "Register packages in `graphite/packages--list'."
-  (cl-loop for package in graphite/packages--list do (straight-use-package-lazy package)))
+  (dolist (package graphite/packages--list) (straight-use-package-lazy package)))
 
 (defun graphite/update-packages ()
   "Install or update packages in `graphite/packages--list'."
   (interactive)
   (graphite/load-modules--packages)
-  (cl-loop for package in graphite/packages--list do (straight-use-package package))
+  (dolist (package graphite/packages--list) (straight-use-package package))
   (message "Packages updated."))
 
 (defun graphite/initialize ()

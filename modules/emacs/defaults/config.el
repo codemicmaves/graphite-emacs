@@ -10,6 +10,7 @@
 (global-auto-revert-mode  1)
 
 ;; Better dired defaults
+(require 'dired)
 (put 'dired-find-alternate-file 'disabled nil)
 (define-key dired-mode-map (kbd "RET") #'dired-find-alternate-file)
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
@@ -37,7 +38,7 @@
 (global-set-key (kbd "H-M-<left>")  #'tab-previous)
 (global-set-key (kbd "H-M-<right>") #'tab-next)
 
-(dolist (index (loop for ii from 1 to 9 collect ii))
+(dolist (index (number-sequence 1 9))
   (global-set-key (kbd (format "M-%s" index))
 		  `(lambda () (interactive) (tab-bar-select-tab ,index)))
   (global-set-key (kbd (format "C-M-%s" index))
