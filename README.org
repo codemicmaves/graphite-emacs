@@ -76,7 +76,7 @@ M-x graphite/reload-emacs-config
 
 * Screenshot
 
-[[https://github.com/codemicmaves/graphite-emacs/blob/screenshots/screenshots/graphite-emacs-01.png?raw=t]]
+[[https://github.com/codemicmaves/graphite-emacs/blob/master/images/graphite-emacs.png?raw=t]]
 
 * License
 #+begin_quote
