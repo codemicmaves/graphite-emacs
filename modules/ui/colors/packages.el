@@ -1,2 +1,4 @@
-(graphite/package 'nord-theme)
-(graphite/package 'gotham-theme)
+(graphite/package '(graphite-theme :type git
+				   :host github
+				   :repo "codemicmaves/graphite-theme"))
+
