@@ -6,6 +6,9 @@
 
 Graphite is a simple starter configuration for Emacs. It implements a basic and much simpler version of the modules system in [[https://github.com/hlissner/doom-emacs][Doom Emacs]]. In graphite, the package installation is decoupled from package configuration. Packages are only installed or updated when the user explicitly asks emacs to do it rather than have it installed or updated on startup.
 
+* Screenshot
+[[https://github.com/codemicmaves/graphite-emacs/blob/26ab25971c935ba1f321d26762ac630f29b475e4/images/graphite-emacs.png?raw=t]]
+
 * Installation
 
 Clone this repository.
@@ -73,10 +76,6 @@ Reload the packages using the following command (bound to =<F8>= by default):
 #+begin_src emacs-lisp
 M-x graphite/reload-emacs-config
 #+end_src
-
-* Screenshot
-
-[[https://github.com/codemicmaves/graphite-emacs/blob/master/images/graphite-emacs.png?raw=t]]
 
 * License
 #+begin_quote
