@@ -13,6 +13,7 @@
 	 "Output\\*$"
 	 "\\*Async Shell Command\\*"
 	 help-mode
+	 helpful-mode
 	 compilation-mode))
  
  (global-set-key (kbd "C-`")   #'popper-toggle-latest)

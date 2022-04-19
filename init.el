@@ -101,8 +101,16 @@
   "Install or update packages in `graphite/packages--list'."
   (interactive)
   (graphite/load-modules--packages)
-  (dolist (package graphite/packages--list) (straight-use-package package))
+  (dolist
+      (package graphite/packages--list)
+    (straight-use-package package))
   (message "Packages updated."))
+
+(defun graphite/upgrade-packages ()
+  "Update packages in `graphite/packages--list'."
+  (interactive)
+  (straight-pull-all)
+  (message "Packages upgraded."))
 
 (defun graphite/initialize ()
   "Initial setup for graphite emacs config."

@@ -1,6 +1,7 @@
 ;; --------------------------
 ;; Graphite: Custom variables
 ;; --------------------------
+
 (defcustom graphite/font "FuraCode Nerd Font Mono"
   "Default font for graphite."
   :group 'graphite)
