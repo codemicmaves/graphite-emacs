@@ -17,23 +17,5 @@
       (setq unit (append `(:propertize ,unit) PROPS)))
     unit))
 
-(defun graphite/modeline-hello ()
-  "hello")
-
-(defvar graphite/mode-line-format (graphite/modeline--make-unit #'graphite/modeline-hello))
-(setq graphite/mode-line-format (graphite/modeline--make-unit #'graphite/modeline-hello nil))
-(setq graphite/mode-line-format (graphite/modeline--make-unit #'graphite/modeline-hello 0 :foreground "#ff0000"))
-
-
-(defun mul (num &rest nums)
-  (print nums))
-
-(defun add (num &rest nums)
-  (apply 'mul num nums))
-
-(add 1 2 3 4)
-
-
-
 
 
